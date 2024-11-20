@@ -1,106 +1,103 @@
 ---
 const bottomLinks = [
+  
+  
   {
-    header: 'Social',
+    header: 'Firma',
+    headerClass: 'font-bold text-lg',
     links: [
       {
-        name: 'Github',
-        href: 'https://github.com/',
-        isExternal: true,
-      },
-      {
-        name: 'Twitter',
-        href: 'https://twitter.com/',
-        isExternal: true,
-      },
-      {
-        name: 'Instagram',
-        href: 'https://instagram.com/',
-        isExternal: true,
-      },
-      {
-        name: 'Facebook',
-        href: 'https://facebook.com/',
-        isExternal: true,
-      },
-    ],
-  },
-  {
-    header: 'Company',
-    links: [
-      {
-        name: 'Home',
+        name: 'Domů',
         href: '/',
         isExternal: false,
       },
       {
-        name: 'About',
-        href: '/about',
+        name: 'O firmě',
+        href: '/o-firme',
         isExternal: false,
       },
       {
-        name: 'Pricing',
-        href: '/pricing',
+        name: 'Klimatizace',
+        href: '/klimatizace',
         isExternal: false,
       },
       {
-        name: 'Contact',
-        href: '/contact',
+        name: 'Tepelná čerpadla',
+        href: '/tepelna-cerpadla',
+        isExternal: false,
+      },
+      {
+        name: 'Servis',
+        href: '/servis',
+        isExternal: false,
+      },
+      {
+        name: 'Galerie',
+        href: '/galerie',
+        isExternal: false,
+      },
+      {
+        name: 'Kontakt',
+        href: '/kontakt',
         isExternal: false,
       },
     ],
   },
-  {
-    header: 'Legal',
-    links: [
-      {
-        name: 'Privacy',
-        href: '/privacy',
-        isExternal: false,
-      },
-      {
-        name: '404',
-        href: '/404',
-        isExternal: false,
-      },
-      {
-        name: 'Styleguide',
-        href: '/styleguide',
-        isExternal: false,
-      },
-    ],
-  },
+  
 ];
 ---
-
 <footer
-  class="bg-primary-500/10 dark:bg-primary-400/10 mt-16 py-16 lg:mt-20 lg:py-20"
+  class="mt-auto bg-primary-500/10 dark:bg-primary-400/10 py-16 lg:mt-20 lg:py-20 tracking-wide"
   aria-labelledby="footer-heading"
 >
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="flex flex-col justify-between gap-12 sm:gap-16 lg:flex-row">
       <div class="flex max-w-sm flex-col items-start gap-6 sm:gap-8">
+        <div class="flex">
+      <a
+        href="/"
+        class="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
+      >
+        <span class="sr-only">Klim–Tech</span>
         <img
           class="h-8 w-auto"
           width="65"
           height="40"
-          :src="$store.theme.isDark ? '/assets/logo-inverted.svg' : '/assets/logo.svg'"
-          alt="Stone"
+          src="/assets/klimtop_logo.png"
+          alt="logo klim–tech"
         />
+      </a>
+    </div>
         <p class="text-primary-950/70 dark:text-primary-200/70 text-base">
-          Stone is a premium Astro theme specially designed for Business, Marketing, SaaS and
-          Startup websites.
+          Klimatizace&Tepelná čerpadla Jirout
+          info@klimtop.cz
         </p>
-        <p class="text-primary-950/70 dark:text-primary-200/70 text-sm">© 2023 Stone</p>
-      </div>
+        
+        <p id="current-year" class="text-primary-950/70 dark:text-primary-200/70 text-sm"> <span id="year"></span> © PP511</p>
 
+        <script>
+          // Získání aktuálního roku
+          const currentYear = new Date().getFullYear();
+        
+          // Získání prvku
+          const yearElement = document.getElementById('year');
+        
+          // Kontrola, zda prvek existuje před přiřazením
+          if (yearElement) {
+            yearElement.textContent = currentYear.toString(); // Převod čísla na string
+          } else {
+            console.error('Element s id "letopočet" nebyl nalezen.');
+          }
+        </script>
+      </div>
+      
       <!-- Bottom links -->
-      <div class="grid max-w-xl flex-1 grid-cols-1 gap-8 sm:grid-cols-3">
+      <div class="grid max-w-xl flex-1 grid-cols-1 gap-8 sm:grid-cols-1 text-center">
         {
           bottomLinks.map((group) => (
             <div class="flex flex-col gap-4">
-              <p class="text-base font-medium">{group.header}</p>
+              <p class={group.headerClass}>{group.header}</p>
               <ul role="list" class="flex flex-col gap-3">
                 {group.links.map((link) => (
                   <li>
@@ -131,5 +128,12 @@ const bottomLinks = [
         }
       </div>
     </div>
+    
   </div>
+  
+  
 </footer>
+<div class="bg-primary-600 p-5">
+  <p class="text-center text-white font-sm">Tato webová stránka neukládá marketingové soubory cookie.</p>
+</div>
+</body>

@@ -1,0 +1,181 @@
+---
+const values = [
+  [
+    {
+      ref: '01',
+      name: 'Servis chladících a klimatizačních zařízení',
+      description:
+      'Při pravidelném servisu se předchází častým závadám způsobeným zanešením filtrů,\n' +
+        'po vyčištění výparníků a kondenzátorů se zlepšuje účinnost a snižuje spotřeba elektrické energie,\n' +
+        'předchází se možnostem úniku chladiva ze systému,\n' +
+        'kontroluje se stav ložisek ventilátorů,\n' +
+        'kontrolují se externí čerpadla kondenzátu.',
+    },
+    {
+      ref: '02',
+      name: 'Servis vnitřních klimatizačních jednotek',
+      name2: 'Kompletní vyčištění: ',
+      description:
+      'Prachových filtrů, \n' +
+      'výměníku chladiva,\n' +
+      'lopatek ventilátoru,\n' +
+      'odpadní vany kondenzátu,\n' +
+      'externí plovákové komory čerpadla kondenzátu,\n' +
+      'celkové povrchové čištění jednotky.\n' +
+      'zjištění stavu ložisek u ventilátoru,\n' +
+      'měření provozních teplot,\n' +
+      'kontrola elektrické části zařízení,\n' +
+      'kontrola veškerých možných funkcí daného zařízení.',
+      name3: 'Zjištění stavu ložisek u ventilátoru: ',
+      description2:
+            'měření provozních teplot,\n' +
+            'kontrola elektrické části zařízení,\n' +
+            'kontrola veškerých možných funkcí daného zařízení.'
+    },
+  ],
+  [
+    {
+      ref: '03',
+      name: 'Servis venkovní klimatizační jednotky',
+      description:
+        'Chemické a tlakové číštění kondenzátoru, ventilátoru a opláštění zařízení\n' +
+        'měření provozních tlaků chladiva a kontrola množství v systému,\n' +
+        'kontrola odběru proudu kompresoru a celého zařízení při zátěži,\n' +
+        'kontrola elektroinstalace, teplotních čidel, tlakových a proudových ochran zařízení,\n' +
+        'kontrola těsnosti spojů zařízení,\n' +
+        'kontrola celkového chodu zařízení.',
+    },
+    {
+      ref: '04',
+      name: 'Profesionální Poradenství',
+      description:
+        'Chápeme, že každý projekt je jedinečný. Proto vám poskytneme individuální poradenství, které odpovídá vašim potřebám a představám.',
+    },
+  ],
+];
+---
+
+<section class="py-16 sm:py-20 tracking-wider">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-8 lg:gap-12">
+      <h2 class="text-3xl font-medium sm:text-4xl underline decoration-red decoration-4 underline-offset-4">Servis, možnosti</h2>
+      <h4 class="text-xl font-light sm:text-xl">Proč je důležité provádět pravidelný servis zařízení?</h4>
+      <div class="grid gap-8 lg:grid-cols-2">
+        {
+          values.map((column, index) => (
+            <div class:list={['space-y-8', index === 1 && 'lg:mt-16']}>
+              {column.map((value) => (
+                <div class="bg-red dark:bg-primary-400/10 flex flex-col gap-12 rounded-3xl px-6 py-8 duration-500 hover:scale-105 cursor-pointer">
+                  <p class="text-2xl font-bold text-white">{value.ref}</p>
+                  <div class="flex flex-col gap-4">
+                    <h3 class="text-2xl font-medium text-white">{value.name}</h3>
+                    {value.name2 && <h3 class="text-xl font-medium text-white">{value.name2}</h3>}
+                    
+                    <p class="text-white dark:text-primary-200/70 text-base sm:text-lg px-5">
+                      {value.description.split('\n').map((line, idx) => (
+                        <span key={idx}>
+                          {line}
+                          {idx < value.description.split('\n').length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
+                    {value.name3 && <h3 class="text-xl font-medium text-white">{value.name3}</h3>}
+                    {value.description2 && (
+                      <p class="text-white dark:text-primary-200/70 text-base sm:text-lg px-5">
+                        {value.description2.split('\n').map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            {idx < value.description2.split('\n').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+ {
+  /**
+   * <section class="py-16 sm:py-20">
+  
+
+    <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 tracking-wide">
+      <div class="grid gap-12 lg:grid-cols-3 lg:gap-8">
+       
+        <h2 class="text-3xl font-medium sm:text-4xl underline decoration-red decoration-4 underline-offset-4">Servis, možnosti</h2>
+        <div class="flex flex-col items-start gap-8 sm:gap-10 lg:col-span-2">
+          
+            <h3 class="text-2xl font-medium sm:text-2xl underline decoration-blue decoration-2 underline-offset-2">Servis chladících a klimatizačních zařízení</h3>
+          <h4 class="text-xl font-light sm:text-xl pl-5">
+            Proč je důležité provádět pravidelný servis zařízení?
+          </h4>
+          <ul class="pl-10 list-disc text-xl font-medium sm:text-xl">
+            <li>Při pravidelném servisu se předchází častým závadám způsobeným zanešením filtrů</li>
+            <li>po vyčištění výparníků a kondenzátorů se zlepšuje účinnost a snižuje spotřeba elektrické energie,</li>
+            <li>předchází se možnostem úniku chladiva ze systému,</li>
+            <li>kontroluje se stav ložisek ventilátorů,</li>
+            <li>kontrolují externí čerpadla kondenzátu.</li>
+          </ul>
+          <h3 class="text-2xl font-medium sm:text-2xl underline decoration-blue decoration-2 underline-offset-2">Servis vnitřních klimatizačních jednotek
+        </h3>
+         
+          <ul class="pl-10 list-disc text-xl font-light sm:text-xl">
+            <li>Kompletní vyčištění:
+                <ul class="py-4 pl-10 list-none">
+                    <li>Prachových filtrů,</li>
+                    <li>výměníku chladiva,</li>
+                    <li>lopatek ventilátoru,</li>
+                    <li>odpadní vany kondenzátu,</li>
+                    <li>externí plovákové komory čerpadla kondenzátu,</li>
+                    <li>celkové povrchové čištění jednotky.</li>
+                </ul>
+            </li>
+            <li>zjištění stavu ložisek u ventilátoru,</li>
+            <li>měření provozních teplot,</li>
+            <li>kontrola elektrické části zařízení,</li>
+            <li>kontrola veškerých možných funkcí daného zařízení.</li>
+          </ul>
+          <h3 class="text-2xl font-medium sm:text-2xl underline decoration-blue decoration-2 underline-offset-2">Servis venkovní klimatizační jednotky
+        </h3>
+         
+          <ul class="pl-10 list-disc text-xl font-light sm:text-xl">
+            <li>Chemické a tlakové číštění kondenzátoru, ventilátoru, opláštění zařízení,</li>
+            <li>měření provozních tlaků chladiva a kontrola množství v systému,</li>
+            <li>kontrola odběru proudu kompresoru a celého zařízení při zátěži,</li>
+            <li>kontrola elektroinstalace, teplotních čidel, tlakových a proudových ochran zařízení,</li>
+            <li>kontrola těsnosti spojů zařízení,</li>
+            <li>kontrola celkového chodu zařízení.</li>
+          </ul>
+
+
+        </div>
+        
+       
+        </div>
+      </div>
+    </div>
+   
+
+  </section>
+   * 
+   */
+ }
+
+   <!--<img
+          class="mb-20 h-full w-full rounded-3xl mx-auto"
+          width="1280"
+          height="640"
+          src="/assets/klima.jpg"
+          alt="obrazek, servis kliamtizace"
+        /> -->
+
+  
+  
+  
+ 
