@@ -4,7 +4,7 @@ import ImageGallery3 from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 // Načte všechny obrázky ze složky src/images/klimatizace
-const images = import.meta.glob("/public/assets/images/rekuperace/*.{jpg,jpeg,png,JPG}");
+const images = import.meta.glob("/src/assets/images/rekuperace/*.{jpg,jpeg,png,JPG}");
 
 // Převede načtené obrázky na formát vhodný pro ImageGallery
 const galleryImages = Object.keys(images).map((path) => ({
