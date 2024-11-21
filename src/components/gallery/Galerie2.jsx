@@ -4,7 +4,7 @@ import ImageGallery2 from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 // Načte všechny obrázky ze složky src/images/klimatizace
-const images = import.meta.glob("/src/assets/images/podlahove-topeni/*.{jpg,jpeg,png,JPG}");
+const images = import.meta.glob("/src/assets/images/podlahove-topeni/*.{jpg,jpeg,png,JPG}", { eager: true });
 
 // Převede načtené obrázky na formát vhodný pro ImageGallery
 const galleryImages = Object.keys(images).map((path) => ({
