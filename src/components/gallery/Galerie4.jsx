@@ -4,7 +4,7 @@ import ImageGallery4 from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 // Načte všechny obrázky ze složky src/images/klimatizace
-const images = import.meta.glob("/src/images/tepelna-cerpadla/*.{jpg,jpeg,png,JPG}");
+const images = import.meta.glob("/public/assets/images/tepelna-cerpadla/*.{jpg,jpeg,png,JPG}");
 
 // Převede načtené obrázky na formát vhodný pro ImageGallery
 const galleryImages = Object.keys(images).map((path) => ({
@@ -22,11 +22,11 @@ function App4() {
 </h2>
 <div className="w-full xl:w-[60%] flex justify-between items-center mb-4">
         <div></div> {/* Ponecháme prázdný div pro vyrovnání */}
-        <a href="/galerie" className="dark:text-primary-200/70 text-base sm:text-lg underline">
+        <a href="/galerie" className="dark:text-primary-200/70 text-base sm:text-lg underline mr-8 md:mr-0">
           Zpět na hlavní stránku galerie
         </a>
       </div>
-      <div className="w-full xl:w-1/2  p-10 rounded-lg">
+      <div className="w-full xl:w-1/2 p-10 rounded-lg">
         <h3 className="text-2xl font-medium tracking-tight sm:text-2xl pb-5">Tepelná čerpadla</h3>
         <ImageGallery4
           items={galleryImages}
