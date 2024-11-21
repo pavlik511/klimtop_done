@@ -9,4 +9,7 @@ export default defineConfig({
     viewTransitions: true,
   },
   integrations: [tailwind(), compress(), react()],
+  vite: {
+    assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.jpeg'], // Add image file extensions to be treated as assets
+  },
 });
