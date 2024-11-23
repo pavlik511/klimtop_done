@@ -3,15 +3,21 @@ import React from "react";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-// Načte všechny obrázky ze složky src/images/klimatizace
-const images = import.meta.glob("/src/assets/images/klimatizace/*.{jpg,jpeg,png,JPG}", { eager: true });
+import img1 from "/src/assets/images/klimatizace/20140423_143324.jpg"
+import img2 from "/src/assets/images/klimatizace/20150302_104046.jpg"
+import img3 from "/src/assets/images/klimatizace/20150618_135249.jpg"
+import img4 from "/src/assets/images/klimatizace/20230118_135037.jpg"
 
-// Převede načtené obrázky na formát vhodný pro ImageGallery
-const galleryImages = Object.keys(images).map((path) => ({
-  
-  original: path,
-  thumbnail: path,
-}));
+
+
+const galleryImages = [
+  { original: img1, thumbnail: img1 },
+  { original: img2, thumbnail: img2 },
+  { original: img3, thumbnail: img3 },
+  { original: img4, thumbnail: img4 },
+
+  // Přidej další obrázky sem
+];
 
 function App() {
   return (
