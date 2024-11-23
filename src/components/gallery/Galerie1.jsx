@@ -19,7 +19,7 @@ const galleryImages = [
   // Přidej další obrázky sem
 ];
 
-function App() {
+export const App = () => {
   return (
     <div className="flex flex-col place-items-center">
       <h2 className="py-16 text-3xl font-medium tracking-tight sm:text-4xl underline decoration-red decoration-4 underline-offset-4">
@@ -45,4 +45,4 @@ function App() {
   );
 }
 
-export default App;
+

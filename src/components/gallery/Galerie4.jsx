@@ -14,7 +14,7 @@ const galleryImages = Object.keys(images).map((path) => ({
   
 }));
 
-function App4() {
+export const App4 = () => {
   return (
     <div className="flex flex-col items-center h-1/2">
       <h2 className="py-16 text-3xl font-medium tracking-tight sm:text-4xl underline decoration-red decoration-4 underline-offset-4">
@@ -40,4 +40,3 @@ function App4() {
   );
 }
 
-export default App4;
