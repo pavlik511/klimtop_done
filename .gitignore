@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # vscode folder
 .vscode
+
+/src/pages/galerie-podlahove-topeni.astro
+/src/pages/galerie-rekuperace.astro
+/src/pages/galerie-tepelna-cerpadla.astro
