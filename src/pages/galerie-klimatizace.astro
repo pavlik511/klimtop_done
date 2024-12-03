@@ -7,8 +7,6 @@ import Layout from '../layouts/Layout.astro';
 description="Klimatizace&Tepelná čerpadla Jirout"
 title="Galerie, klimatizace"
 >
-<App client:load />
-
-  
-  
+<!-- Tady nemůžeš použít client:load, ale client:only="react", protože používáš React. -->
+<App client:only="react" />
 </Layout>
