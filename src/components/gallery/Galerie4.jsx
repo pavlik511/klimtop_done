@@ -14,7 +14,7 @@ const galleryImages = Object.keys(images).map((path) => ({
   
 }));
 
-export const App4 = () => {
+function App4() {
   return (
     <div className="flex flex-col items-center h-1/2">
       <h2 className="py-16 text-3xl font-medium tracking-tight sm:text-4xl underline decoration-red decoration-4 underline-offset-4">
@@ -22,7 +22,7 @@ export const App4 = () => {
 </h2>
 <div className="w-full xl:w-[60%] flex justify-between items-center mb-4">
         <div></div> {/* Ponecháme prázdný div pro vyrovnání */}
-        <a href="/galerie" className="dark:text-primary-200/70 text-base sm:text-lg underline mr-8 md:mr-0">
+        <a href="/galerie" className="dark:text-primary-200/70 text-base sm:text-lg underline pr-5">
           Zpět na hlavní stránku galerie
         </a>
       </div>
@@ -39,4 +39,4 @@ export const App4 = () => {
     </div>
   );
 }
-
+export default App4

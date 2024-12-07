@@ -13,7 +13,7 @@ const galleryImages = Object.keys(images).map((path) => ({
   thumbnail: path,
 }));
 
-export const App3 = () => {
+function App3(){
   return (
     <div className="flex flex-col items-center">
       <h2 className="py-16 text-3xl font-medium tracking-tight sm:text-4xl underline decoration-red decoration-4 underline-offset-4">
@@ -21,7 +21,7 @@ export const App3 = () => {
 </h2>
 <div className="w-full xl:w-[60%] flex justify-between items-center mb-4">
         <div></div> {/* Ponecháme prázdný div pro vyrovnání */}
-        <a href="/galerie" className="dark:text-primary-200/70 text-base sm:text-lg underline">
+        <a href="/galerie" className="dark:text-primary-200/70 text-base sm:text-lg underline pr-5">
           Zpět na hlavní stránku galerie
         </a>
       </div>
@@ -37,4 +37,4 @@ export const App3 = () => {
     </div>
   );
 }
-
+export default App3
